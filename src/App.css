@@ -18,8 +18,8 @@ img {
   padding-top: 10px;
   background-color: aquamarine;
   width: 30em;
-  display: inline-flex;
-  justify-content: space-between;
+  display: inline-block;
+  justify-content:;
   border-radius: 30px;
   border: 10px double pink;
   
@@ -31,4 +31,12 @@ h1 {
   text-align: center;
   text-shadow: 5px 5px 5px;
 
+}
+
+button {
+  justify-content: center;
+  height: 50px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
 }

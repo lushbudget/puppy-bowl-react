@@ -4,6 +4,7 @@ import { useState } from "react";
 const NewPuppyForm = (BASE_API) => {
   const [name, setName] = useState([]);
   const [breed, setBreed] = useState([]);
+  const [imageUrl, setImageUrl] = useState('');
   const postPuppy = async () => {
     try {
       const response = await fetch(BASE_API.baseAPI,
@@ -15,6 +16,7 @@ const NewPuppyForm = (BASE_API) => {
           body: JSON.stringify({
             name,
             breed,
+            imageUrl
           }),
         }
       );
@@ -46,6 +48,14 @@ const NewPuppyForm = (BASE_API) => {
         type="text"
         value={breed}
         onChange={(event) => {setBreed(event.target.value)}}>
+        </input>
+      </label>
+      <label>
+        ImageUrl:
+        <input
+        type="text"
+        value={imageUrl}
+        onChange={(event) => {setImageUrl(event.target.value)}}>
         </input>
       </label>
       <input type="submit" value="add that pupper!"></input>
