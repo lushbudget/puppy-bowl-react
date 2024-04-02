@@ -18,8 +18,8 @@ img {
   padding-top: 10px;
   background-color: aquamarine;
   width: 30em;
-  display: inline-block;
-  justify-content:;
+  display: flexbox;
+  justify-content: space-between;
   border-radius: 30px;
   border: 10px double pink;
   
@@ -27,6 +27,13 @@ img {
 }
 
 h1 {
+  background-color: rgb(193, 217, 237);
+  padding-top: 1em;
+  border: 10px double rgb(216, 100, 120);
+  border-radius: 80px;
+  height: 3em;
+  margin-left: 200px;
+  margin-right: 200px;
   color: rgb(16, 6, 1);
   text-align: center;
   text-shadow: 5px 5px 5px;

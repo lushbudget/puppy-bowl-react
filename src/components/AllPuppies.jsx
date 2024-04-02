@@ -3,29 +3,33 @@ import PuppyCard from "./PuppyCard";
 
 
 
-const AllPuppies = (BASE_API) => {
+const AllPuppies = (BASE_API, setNeedsUpdating) => {
   const [puppyList, setPuppyList] = useState([]);
-  useEffect(() => {
-    
-    const fetchPuppies = async () => {
-      try {
-
-        const response = await fetch(BASE_API.baseAPI);
-        const result = await response.json();
-        setPuppyList(result.data.players)
-      } catch (err) {
-        console.error(err);
-      }
+  const fetchPuppies = async () => {
+    try {
+      const response = await fetch(BASE_API.baseAPI);
+      const result = await response.json();
+      setPuppyList(result.data.players)
+    } catch (err) {
+      console.error(err);
     }
+  }
+  
+  useEffect(() => {
     fetchPuppies()
   }, []);
   return puppyList.map((puppy) => {
     return (
-      <>
+      <div key={`PUPPY:${puppy.id}`}>
         <PuppyCard
-          key={`PUPPY:${puppy.id}`}
-          puppy={puppy} />
-      </>
+          puppyList={puppyList}
+          puppy={puppy}
+          setNeedsUpdating={setNeedsUpdating}
+          fetchPuppies={fetchPuppies}
+
+           
+        />
+      </div>
 
     )
 
