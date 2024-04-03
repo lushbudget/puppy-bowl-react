@@ -47,3 +47,21 @@ button {
   margin: 10px;
   border-radius: 20px;
 }
+
+#singlePuppyCard {
+  background-color: aquamarine;
+  text-align: center;
+  margin-left: 20em;
+  margin-right: 20em;
+  border-radius: 50px;
+  border: 20px outset rgb(216, 100, 120) 
+}
+#singlePuppyCard h2 {
+  font-weight: 700;
+}
+#singlePuppyCard h4 {
+  color:blueviolet;
+}
+#singlePuppyCard img {
+  height: 500px
+}
