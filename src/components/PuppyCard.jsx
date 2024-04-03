@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DeletePuppy from "./DeletePuppy";
 import MoreInfo from "./MoreInfo";
 import { useNavigate } from "react-router-dom";
+import NewPuppyForm from "./NewPuppyForm";
 
 
 const PuppyCard = ({ puppy, puppyList, setNeedsUpdating, fetchPuppies}) => {

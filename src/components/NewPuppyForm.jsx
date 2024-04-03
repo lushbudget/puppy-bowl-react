@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-
-const NewPuppyForm = (BASE_API) => {
+const NewPuppyForm = ({baseAPI, fetchPuppies}) => {
   const [name, setName] = useState([]);
   const [breed, setBreed] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const postPuppy = async () => {
     try {
-      const response = await fetch(BASE_API.baseAPI,
+      const response = await fetch(baseAPI,
         {
           method: 'POST',
           headers: {
@@ -22,6 +21,10 @@ const NewPuppyForm = (BASE_API) => {
       );
       const result = await response.json();
       console.log(result);
+      fetchPuppies();
+      
+
+
     } catch (err) {
       console.error(err);
     }
@@ -30,6 +33,7 @@ const NewPuppyForm = (BASE_API) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postPuppy();
+
     
   }
   return (
