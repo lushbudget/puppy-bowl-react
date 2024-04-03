@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const NewPuppyForm = ({baseAPI, fetchPuppies}) => {
+const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
   const [name, setName] = useState([]);
   const [breed, setBreed] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
@@ -20,11 +20,7 @@ const NewPuppyForm = ({baseAPI, fetchPuppies}) => {
         }
       );
       const result = await response.json();
-      console.log(result);
-      fetchPuppies();
-      
-
-
+      await fetchPuppies();
     } catch (err) {
       console.error(err);
     }
@@ -34,32 +30,32 @@ const NewPuppyForm = ({baseAPI, fetchPuppies}) => {
     e.preventDefault();
     postPuppy();
 
-    
+
   }
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input 
-        type="text"
-        value={name}
-        onChange={(event) => {setName(event.target.value)}}>
+        <input
+          type="text"
+          value={name}
+          onChange={(event) => { setName(event.target.value) }}>
         </input>
       </label>
       <label>
         Breed:
         <input
-        type="text"
-        value={breed}
-        onChange={(event) => {setBreed(event.target.value)}}>
+          type="text"
+          value={breed}
+          onChange={(event) => { setBreed(event.target.value) }}>
         </input>
       </label>
       <label>
         ImageUrl:
         <input
-        type="text"
-        value={imageUrl}
-        onChange={(event) => {setImageUrl(event.target.value)}}>
+          type="text"
+          value={imageUrl}
+          onChange={(event) => { setImageUrl(event.target.value) }}>
         </input>
       </label>
       <input type="submit" value="add that pupper!"></input>

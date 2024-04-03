@@ -10,7 +10,7 @@ const PuppyCard = ({ puppy, puppyList, setNeedsUpdating, fetchPuppies}) => {
   const navigate = useNavigate();
   useEffect(() => {
     setPuppyToDisplay(puppy)
-  })
+  }, []);
 
 
   return (
