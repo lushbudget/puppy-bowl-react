@@ -1,3 +1,6 @@
+body {
+  border: 10px double rgb(40, 232, 34)
+}
 h3 {
   margin-left: 1em;
 }
@@ -9,12 +12,13 @@ body {
 }
 img {
   width: 200px;
-  padding: 20px
+  padding: 20px;
+  margin-left: 175px;
 }
 
 .puppyCard {
   /* text-align: center; */
-  margin: 10px;
+  margin: auto;
   padding-top: 10px;
   background-color: aquamarine;
   width: 50em;
@@ -22,6 +26,7 @@ img {
   justify-content: space-between;
   border-radius: 30px;
   border: 10px double pink;
+  margin-bottom: 10px;
   
 
 }
