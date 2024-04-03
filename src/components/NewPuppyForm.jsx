@@ -33,7 +33,9 @@ const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
 
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form 
+      id="addForm"
+      onSubmit={handleSubmit}>
       <label>
         Name:
         <input
@@ -58,7 +60,7 @@ const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
           onChange={(event) => { setImageUrl(event.target.value) }}>
         </input>
       </label>
-      <input type="submit" value="add that pupper!"></input>
+      <input id="submitButton" type="submit" value="add that pupper!"></input>
     </form>
   )
 }

@@ -9,15 +9,16 @@ const SearchBar = ({puppyList, setPuppiesToDisplay}) => {
       return puppy.name.toLowerCase().includes(searchParam)
     });
     setPuppiesToDisplay(filteredList)
-    console.log(filteredList)
 
   }, [searchParam])
 
  return (
   <>
-  <label id="search">
+  <form id="searchForm">
+  <label>
     Search For Your Favorite Puppy:
-    <input
+    <input 
+      id="search"
       type="text"
       placeholder="search"
       onChange={(e) => {
@@ -25,6 +26,7 @@ const SearchBar = ({puppyList, setPuppiesToDisplay}) => {
     }}
     />
   </label>
+  </form>
   </>
 )
   }
