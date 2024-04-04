@@ -4,6 +4,7 @@ const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
   const [name, setName] = useState([]);
   const [breed, setBreed] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
+  const [text, setText] = useState('')
   const postPuppy = async () => {
     try {
       const response = await fetch(baseAPI,
@@ -21,6 +22,9 @@ const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
       );
       const result = await response.json();
       await fetchPuppies();
+      setName('')
+      setBreed('')
+      setImageUrl('')
     } catch (err) {
       console.error(err);
     }
@@ -31,11 +35,13 @@ const NewPuppyForm = ({ baseAPI, fetchPuppies }) => {
     postPuppy();
 
 
+
   }
   return (
     <form 
       id="addForm"
-      onSubmit={handleSubmit}>
+      onSubmit={
+        handleSubmit}>
       <label>
         Name:
         <input

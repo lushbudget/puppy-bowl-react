@@ -2,8 +2,6 @@ import { useEffect, useState } from "react"
 
 const SearchBar = ({puppyList, setPuppiesToDisplay}) => {
   const [searchParam, setSearchParam] = useState("");
-  
-  
   useEffect(() => {
     const filteredList = puppyList.filter((puppy) => {
       return puppy.name.toLowerCase().includes(searchParam)
@@ -11,6 +9,10 @@ const SearchBar = ({puppyList, setPuppiesToDisplay}) => {
     setPuppiesToDisplay(filteredList)
 
   }, [searchParam])
+  const handleClear = (e) => {
+    e.preventDefault();
+  
+  }
 
  return (
   <>
@@ -26,6 +28,10 @@ const SearchBar = ({puppyList, setPuppiesToDisplay}) => {
     }}
     />
   </label>
+ 
+  <input onSubmit={handleClear} id="submitButton" type="submit" value="clear that selection"></input>
+
+  
   </form>
   </>
 )
